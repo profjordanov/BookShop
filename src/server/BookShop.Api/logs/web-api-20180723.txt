@@ -17,3 +17,174 @@
 2018-07-23T19:08:44.1380022+03:00 0HLFGMQ7KB8J7:00000003 [INF] Sending file. Request path: '"/favicon-16x16.png"'. Physical path: '"N/A"' (27b0a520)
 2018-07-23T19:08:44.1612539+03:00 0HLFGMQ7KB8J7:00000003 [INF] Request finished in 50.8751ms 200 image/png (791a596a)
 2018-07-23T19:08:44.7181151+03:00 0HLFGMQ7KB8JA:00000002 [INF] Request finished in 750.2592ms 200 application/json (791a596a)
+2018-07-23T19:32:27.2384919+03:00 0HLFGN7G6H67E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-07-23T19:32:27.3544034+03:00 0HLFGN7G6H67F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js   (ca22a1cb)
+2018-07-23T19:32:27.3562558+03:00 0HLFGN7G6H67G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css   (ca22a1cb)
+2018-07-23T19:32:27.3647370+03:00 0HLFGN7G6H67D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js   (ca22a1cb)
+2018-07-23T19:32:27.3682805+03:00 0HLFGN7G6H67E:00000001 [INF] Request finished in 112.3717ms 200 text/html (791a596a)
+2018-07-23T19:32:27.4887244+03:00 0HLFGN7G6H67D:00000001 [INF] The file "/swagger-ui-bundle.js" was not modified (f1f8d725)
+2018-07-23T19:32:27.4887836+03:00 0HLFGN7G6H67G:00000001 [INF] The file "/swagger-ui.css" was not modified (f1f8d725)
+2018-07-23T19:32:27.4929250+03:00 0HLFGN7G6H67F:00000001 [INF] The file "/swagger-ui-standalone-preset.js" was not modified (f1f8d725)
+2018-07-23T19:32:27.5391407+03:00 0HLFGN7G6H67F:00000001 [INF] Request finished in 180.7948ms 304 application/javascript (791a596a)
+2018-07-23T19:32:27.5610781+03:00 0HLFGN7G6H67G:00000001 [INF] Request finished in 180.7948ms 304 text/css (791a596a)
+2018-07-23T19:32:27.5802226+03:00 0HLFGN7G6H67D:00000001 [INF] Request finished in 167.1753ms 304 application/javascript (791a596a)
+2018-07-23T19:32:28.2571078+03:00 0HLFGN7G6H67G:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2018-07-23T19:32:28.7430396+03:00 0HLFGN7G6H67G:00000002 [INF] Request finished in 513.8105ms 200 application/json (791a596a)
+2018-07-23T19:33:05.8301161+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:33:05.9102684+03:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:33:06.1376899+03:00  [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2018-07-23T19:33:06.1401624+03:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:33:06.1441559+03:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-07-23T19:33:06.1628269+03:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2018-07-23T19:34:33.5710276+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:34:46.4786082+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:34:46.6265352+03:00  [INF] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:34:46.6323331+03:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:34:46.6495362+03:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-07-23T19:34:46.6856249+03:00  [INF] Applying migration '"20180723163433_Models"'. (0e2ac64d)
+2018-07-23T19:34:46.8845598+03:00  [ERR] Failed executing DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQuery(IEnumerable`1 migrationCommands, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at Microsoft.EntityFrameworkCore.Design.Internal.MigrationsOperations.UpdateDatabase(String targetMigration, String contextType)
+   at Microsoft.EntityFrameworkCore.Design.OperationExecutor.OperationBase.Execute(Action action)
+ClientConnectionId:a3369454-ed99-4eb9-966b-5da0d1cb2886
+Error Number:2714,State:6,Class:16
+2018-07-23T19:35:59.0539638+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:35:59.1337175+03:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:35:59.1401678+03:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:35:59.1626535+03:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-07-23T19:35:59.1968264+03:00  [INF] Applying migration '"20180723163433_Models"'. (0e2ac64d)
+2018-07-23T19:35:59.3616213+03:00  [ERR] Failed executing DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:f14c1d4c-a129-453c-84da-c06930841443
+Error Number:2714,State:6,Class:16
+2018-07-23T19:37:57.6214055+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:37:57.7029785+03:00  [INF] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:37:57.7117917+03:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:37:57.7356655+03:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-07-23T19:37:57.7723024+03:00  [INF] Applying migration '"20180723163433_Models"'. (0e2ac64d)
+2018-07-23T19:37:57.9476795+03:00  [ERR] Failed executing DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQuery(IEnumerable`1 migrationCommands, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at Microsoft.EntityFrameworkCore.Design.Internal.MigrationsOperations.UpdateDatabase(String targetMigration, String contextType)
+   at Microsoft.EntityFrameworkCore.Design.OperationExecutor.OperationBase.Execute(Action action)
+ClientConnectionId:c2c937e2-0f86-457a-a5d4-8e6a631a10da
+Error Number:2714,State:6,Class:16
+2018-07-23T19:38:50.2106604+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:39:07.3996496+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:39:07.4848445+03:00  [INF] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:39:07.5010293+03:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-07-23T19:39:07.5216642+03:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-07-23T19:39:07.5539214+03:00  [INF] Applying migration '"20180723163433_Models"'. (0e2ac64d)
+2018-07-23T19:39:07.7314711+03:00  [ERR] Failed executing DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:5bfab436-8375-4ac6-aa3d-46af74a7aa3b
+Error Number:2714,State:6,Class:16
+2018-07-23T19:40:03.2127195+03:00  [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-07-23T19:41:55.4810253+03:00 0HLFGNCPH8RLQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-07-23T19:41:55.6202936+03:00 0HLFGNCPH8RLO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css   (ca22a1cb)
+2018-07-23T19:41:55.6419348+03:00 0HLFGNCPH8RLP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js   (ca22a1cb)
+2018-07-23T19:41:55.6456628+03:00 0HLFGNCPH8RLQ:00000001 [INF] Request finished in 135.8526ms 200 text/html (791a596a)
+2018-07-23T19:41:55.6528348+03:00 0HLFGNCPH8RLN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js   (ca22a1cb)
+2018-07-23T19:41:55.7490721+03:00 0HLFGNCPH8RLO:00000001 [INF] The file "/swagger-ui.css" was not modified (f1f8d725)
+2018-07-23T19:41:55.7535122+03:00 0HLFGNCPH8RLP:00000001 [INF] The file "/swagger-ui-bundle.js" was not modified (f1f8d725)
+2018-07-23T19:41:55.7592233+03:00 0HLFGNCPH8RLN:00000001 [INF] The file "/swagger-ui-standalone-preset.js" was not modified (f1f8d725)
+2018-07-23T19:41:55.8098047+03:00 0HLFGNCPH8RLN:00000001 [INF] Request finished in 192.1813ms 304 application/javascript (791a596a)
+2018-07-23T19:41:55.8354418+03:00 0HLFGNCPH8RLO:00000001 [INF] Request finished in 192.3954ms 304 text/css (791a596a)
+2018-07-23T19:41:55.8451007+03:00 0HLFGNCPH8RLP:00000001 [INF] Request finished in 194.9912ms 304 application/javascript (791a596a)
+2018-07-23T19:41:56.0984822+03:00 0HLFGNCPH8RLO:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2018-07-23T19:41:56.5916210+03:00 0HLFGNCPH8RLO:00000002 [INF] Request finished in 455.9803ms 200 application/json (791a596a)
