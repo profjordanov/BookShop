@@ -39,6 +39,7 @@ namespace BookShop.Api
 
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IJwtFactory, JwtFactory>();
+            services.AddTransient<IAuthorService, AuthorService>();
 
             services.AddMvc(options =>
             {
