@@ -3,15 +3,10 @@
 ## Features
 
 - [x] AutoMapper
-
 - [x] EntityFramework Core with SQL Server and ASP.NET Identity
-
 - [x] JWT authentication/authorization
-
 - [x] File logging with Serilog
-
 - [x] Stylecop
-
 - [x] Neat folder structure
 
 - [x] Swagger UI + Fully Documented Controllers
