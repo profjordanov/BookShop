@@ -1,21 +1,23 @@
 # Book Shop Service
 
-AutoMapper
+## Features
 
-EntityFramework Core with SQL Server and ASP.NET Identity
+- [x] AutoMapper
 
-JWT authentication/authorization
+- [x] EntityFramework Core with SQL Server and ASP.NET Identity
 
-File logging with Serilog
+- [x] JWT authentication/authorization
 
-Stylecop
+- [x] File logging with Serilog
 
-Neat folder structure
+- [x] Stylecop
 
-Swagger UI + Fully Documented Controllers
+- [x] Neat folder structure
 
-Global Model Errors Handler
+- [x] Swagger UI + Fully Documented Controllers
 
-Global Environment-Dependent Exception Handler
+- [x] Global Model Errors Handler
+
+- [x] Global Environment-Dependent Exception Handler
 
 -> Powerd by Dev Adventures .NET Core project template. (https://devadventures.net/2018/06/09/introducing-dev-adventures-net-core-project-template/)
