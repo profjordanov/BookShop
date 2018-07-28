@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
+using BookShop.Core.Models.Authors;
 using BookShop.Core.Services;
 using BookShop.Data.Entities;
 using BookShop.Data.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Business.Services
 {
@@ -28,5 +32,12 @@ namespace BookShop.Business.Services
 
             return author.Id;
         }
+
+        public async Task<AuthorDetailsServiceModel> Details(int id)
+            => await this._appContext
+                .Authors
+                .Where(a => a.Id == id)
+                .ProjectTo<AuthorDetailsServiceModel>()
+                .FirstOrDefaultAsync();
     }
 }

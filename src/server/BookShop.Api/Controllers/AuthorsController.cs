@@ -6,6 +6,7 @@ using BookShop.Core.Models.Authors;
 using BookShop.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static BookShop.Api.WebConstants;
 
 namespace BookShop.Api.Controllers
 {
@@ -18,6 +19,10 @@ namespace BookShop.Api.Controllers
         {
             this.authorService = authorService;
         }
+
+        [HttpGet(WithId)]
+        public async Task<IActionResult> Get(int id)
+            => this.OkOrNotFound(await this.authorService.Details(id));
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]AuthorRequestModel model)
