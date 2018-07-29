@@ -22,7 +22,15 @@ namespace BookShop.Api.Controllers
 
         [HttpGet(WithId)]
         public async Task<IActionResult> Get(int id)
-            => this.OkOrNotFound(await this.authorService.Details(id));
+        {
+            var result = await this.authorService.Details(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]AuthorRequestModel model)

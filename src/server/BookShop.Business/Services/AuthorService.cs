@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using BookShop.Core.Models.Authors;
+using BookShop.Core.Models.Books;
 using BookShop.Core.Services;
 using BookShop.Data.Entities;
 using BookShop.Data.EntityFramework;
@@ -34,10 +36,17 @@ namespace BookShop.Business.Services
         }
 
         public async Task<AuthorDetailsServiceModel> Details(int id)
-            => await this._appContext
+            => await _appContext
                 .Authors
                 .Where(a => a.Id == id)
                 .ProjectTo<AuthorDetailsServiceModel>()
                 .FirstOrDefaultAsync();
+
+        public async Task<IEnumerable<BookWithCategoriesServiceModel>> BooksByAuthorId(int authorId)
+            => await _appContext
+                .Books
+                .Where(b => b.AuthorId == authorId)
+                .ProjectTo<BookWithCategoriesServiceModel>()
+                .ToListAsync();
     }
 }
