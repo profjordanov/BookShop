@@ -48,5 +48,8 @@ namespace BookShop.Business.Services
                 .Where(b => b.AuthorId == authorId)
                 .ProjectTo<BookWithCategoriesServiceModel>()
                 .ToListAsync();
+
+        public async Task<bool> Exists(int id)
+            => await _appContext.Authors.AnyAsync(a => a.Id == id);
     }
 }

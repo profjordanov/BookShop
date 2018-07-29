@@ -12,5 +12,7 @@ namespace BookShop.Core.Services
         Task<AuthorDetailsServiceModel> Details(int id);
 
         Task<IEnumerable<BookWithCategoriesServiceModel>> BooksByAuthorId(int authorId);
+
+        Task<bool> Exists(int id);
     }
 }
