@@ -8,6 +8,21 @@
 - [x] File logging with Serilog
 - [x] Stylecop
 - [x] Neat folder structure
+
+```
+├───src
+│   ├───configuration
+│   └───server
+│       ├───BookShop.Api
+│       ├───BookShop.Business
+│       ├───BookShop.Core
+│       ├───BookShop.Data
+│       └───BookShop.Data.EntityFramework
+└───tests
+    └───BookShop.Business.Tests
+
+```
+
 - [x] Swagger UI + Fully Documented Controllers
 - [x] Global Model Errors Handler
 - [x] Global Environment-Dependent Exception Handler
