@@ -24,9 +24,13 @@
 ```
 
 - [x] Swagger UI + Fully Documented Controllers
+
 ![swagger-ui](https://devadventures.net/wp-content/uploads/2018/06/swagger-ui-new.png)
+
 - [x] Global Model Errors Handler
+
 ![model-errors](https://devadventures.net/wp-content/uploads/2018/05/model-errors.png)
+
 - [x] Global Environment-Dependent Exception Handler
 
 -> Powerd by Dev Adventures .NET Core project template. (https://devadventures.net/2018/06/09/introducing-dev-adventures-net-core-project-template/)
