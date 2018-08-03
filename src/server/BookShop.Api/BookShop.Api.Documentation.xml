@@ -10,7 +10,7 @@
             </summary>
             <returns>A collection of categories.</returns>
             <response code="200">If there are categories.</response>
-            <response code="400">If no category exists.</response>
+            <response code="404">If no category exists.</response>
         </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Get(System.Int32)">
             <summary>
@@ -19,7 +19,7 @@
             <param name="id">The ID of the category.</param>
             <returns>A category model.</returns>
             <response code="200">If there is category.</response>
-            <response code="400">If there isn't such category .</response>
+            <response code="404">If there isn't such category .</response>
         </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
             <summary>
