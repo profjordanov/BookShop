@@ -32,6 +32,7 @@
 ![model-errors](https://devadventures.net/wp-content/uploads/2018/05/model-errors.png)
 
 - [x] Global Environment-Dependent Exception Handler
+
 ![exception-development](https://devadventures.net/wp-content/uploads/2018/06/exception-development.png)<br> 
 
 ### Test Suite
