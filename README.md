@@ -33,4 +33,13 @@
 
 - [x] Global Environment-Dependent Exception Handler
 
+![exception-development](https://devadventures.net/wp-content/uploads/2018/06/exception-development.png)<br> 
+
+### Test Suite
+- [x] xUnit
+- [x] Autofixture
+- [x] Moq
+- [x] Shouldly
+- [x] Arrange Act Assert Pattern
+
 -> Powerd by Dev Adventures .NET Core project template. (https://devadventures.net/2018/06/09/introducing-dev-adventures-net-core-project-template/)
