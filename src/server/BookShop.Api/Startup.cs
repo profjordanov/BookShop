@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using BookShop.Api.Configuration;
 using BookShop.Api.Filters;
 using BookShop.Api.ModelBinders;
@@ -13,6 +8,11 @@ using BookShop.Core.Configuration;
 using BookShop.Core.Identity;
 using BookShop.Core.Services;
 using BookShop.Data.EntityFramework;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace BookShop.Api
 {
