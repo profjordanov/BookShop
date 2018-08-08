@@ -63,3 +63,121 @@ FROM [Categories] AS [dto]" (0723d8ff)
 2018-08-08T21:01:16.3977007+03:00 0HLFTB34DCBVR:00000005 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
 2018-08-08T21:01:16.4231943+03:00 0HLFTB34DCBVR:00000005 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 85.0558ms (afa2e885)
 2018-08-08T21:01:16.4381041+03:00 0HLFTB34DCBVR:00000005 [INF] Request finished in 120.6276ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:44:33.8651607+03:00 0HLFTBRTPHRER:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-08-08T21:44:33.9787245+03:00 0HLFTBRTPHRET:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js   (ca22a1cb)
+2018-08-08T21:44:33.9811300+03:00 0HLFTBRTPHRER:00000001 [INF] Request finished in 133.647ms 200 text/html (791a596a)
+2018-08-08T21:44:34.0346722+03:00 0HLFTBRTPHREQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js   (ca22a1cb)
+2018-08-08T21:44:34.0612893+03:00 0HLFTBRTPHRER:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css   (ca22a1cb)
+2018-08-08T21:44:34.1205651+03:00 0HLFTBRTPHREQ:00000001 [INF] The file "/swagger-ui-standalone-preset.js" was not modified (f1f8d725)
+2018-08-08T21:44:34.1257227+03:00 0HLFTBRTPHRER:00000002 [INF] The file "/swagger-ui.css" was not modified (f1f8d725)
+2018-08-08T21:44:34.1310139+03:00 0HLFTBRTPHRET:00000001 [INF] The file "/swagger-ui-bundle.js" was not modified (f1f8d725)
+2018-08-08T21:44:34.1757361+03:00 0HLFTBRTPHRER:00000002 [INF] Request finished in 83.3386ms 304 text/css (791a596a)
+2018-08-08T21:44:34.2054479+03:00 0HLFTBRTPHREQ:00000001 [INF] Request finished in 186.3151ms 304 application/javascript (791a596a)
+2018-08-08T21:44:34.2229552+03:00 0HLFTBRTPHRET:00000001 [INF] Request finished in 189.9777ms 304 application/javascript (791a596a)
+2018-08-08T21:44:34.5115150+03:00 0HLFTBRTPHRER:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2018-08-08T21:44:35.0568640+03:00 0HLFTBRTPHRER:00000003 [INF] Request finished in 563.4327ms 200 application/json (791a596a)
+2018-08-08T21:44:46.0819616+03:00 0HLFTBRTPHRER:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories   (ca22a1cb)
+2018-08-08T21:44:46.3769249+03:00 0HLFTBRTPHRER:00000004 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:44:46.4392987+03:00 0HLFTBRTPHRER:00000004 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:44:47.0853661+03:00 0HLFTBRTPHRER:00000004 [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name]
+FROM [Categories] AS [dto]" (0723d8ff)
+2018-08-08T21:44:47.1526562+03:00 0HLFTBRTPHRER:00000004 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:44:47.2002304+03:00 0HLFTBRTPHRER:00000004 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 846.5826ms (afa2e885)
+2018-08-08T21:44:47.2170054+03:00 0HLFTBRTPHRER:00000004 [INF] Request finished in 1127.1802ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:45:02.2082189+03:00 0HLFTBRTPHRER:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories/1   (ca22a1cb)
+2018-08-08T21:45:02.2945466+03:00 0HLFTBRTPHRER:00000005 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:45:02.3160563+03:00 0HLFTBRTPHRER:00000005 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:45:02.5108505+03:00 0HLFTBRTPHRER:00000005 [INF] Executed DbCommand ("35"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__id_0" (0723d8ff)
+2018-08-08T21:45:02.5267753+03:00 0HLFTBRTPHRER:00000005 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:45:02.5414143+03:00 0HLFTBRTPHRER:00000005 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 287.4202ms (afa2e885)
+2018-08-08T21:45:02.5600101+03:00 0HLFTBRTPHRER:00000005 [INF] Request finished in 349.7439ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:45:33.5837392+03:00 0HLFTBRTPHRER:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Categories application/json-patch+json 32 (ca22a1cb)
+2018-08-08T21:45:33.7136957+03:00 0HLFTBRTPHRER:00000006 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Post (BookShop.Api)" with arguments (["BookShop.Core.Models.Categories.CategoryRequestModel"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:45:33.7311200+03:00 0HLFTBRTPHRER:00000006 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:45:33.8280851+03:00 0HLFTBRTPHRER:00000006 [WRN] The LINQ expression '"where Equals([c].Name, __name_0, CurrentCultureIgnoreCase)"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-08T21:45:33.8437402+03:00 0HLFTBRTPHRER:00000006 [WRN] The LINQ expression '"Any()"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-08T21:45:33.9211430+03:00 0HLFTBRTPHRER:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Name]
+FROM [Categories] AS [c]" (0723d8ff)
+2018-08-08T21:45:34.3521881+03:00 0HLFTBRTPHRER:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Categories] ([Name])
+VALUES (@p0);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2018-08-08T21:45:34.4866555+03:00 0HLFTBRTPHRER:00000006 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:45:34.5158726+03:00 0HLFTBRTPHRER:00000006 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Post (BookShop.Api)" in 904.2928ms (afa2e885)
+2018-08-08T21:45:34.5322263+03:00 0HLFTBRTPHRER:00000006 [INF] Request finished in 945.221ms 201 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:45:57.3252184+03:00 0HLFTBRTPHRER:00000007 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/Categories application/json-patch+json 49 (ca22a1cb)
+2018-08-08T21:45:57.3748106+03:00 0HLFTBRTPHRER:00000007 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Put (BookShop.Api)" with arguments (["BookShop.Core.Models.Categories.CategoryServiceModel"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:45:57.3890062+03:00 0HLFTBRTPHRER:00000007 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:45:57.4429017+03:00 0HLFTBRTPHRER:00000007 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]
+        WHERE [c].[Id] = @__id_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-08-08T21:45:57.4904833+03:00 0HLFTBRTPHRER:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Name]
+FROM [Categories] AS [c]" (0723d8ff)
+2018-08-08T21:45:57.5770768+03:00 0HLFTBRTPHRER:00000007 [INF] Executed DbCommand ("4"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Name]
+FROM [Categories] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-08T21:45:57.6720907+03:00 0HLFTBRTPHRER:00000007 [INF] Executed DbCommand ("8"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Categories] SET [Name] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-08-08T21:45:57.6933696+03:00 0HLFTBRTPHRER:00000007 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:45:57.7072873+03:00 0HLFTBRTPHRER:00000007 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Put (BookShop.Api)" in 355.1616ms (afa2e885)
+2018-08-08T21:45:57.7173654+03:00 0HLFTBRTPHRER:00000007 [INF] Request finished in 394.2817ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:46:08.9283860+03:00 0HLFTBRTPHRER:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories/6   (ca22a1cb)
+2018-08-08T21:46:08.9405327+03:00 0HLFTBRTPHRER:00000008 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (["6"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:46:08.9515452+03:00 0HLFTBRTPHRER:00000008 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:46:08.9773031+03:00 0HLFTBRTPHRER:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__id_0" (0723d8ff)
+2018-08-08T21:46:08.9886937+03:00 0HLFTBRTPHRER:00000008 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:46:09.0141170+03:00 0HLFTBRTPHRER:00000008 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 74.836ms (afa2e885)
+2018-08-08T21:46:09.0238048+03:00 0HLFTBRTPHRER:00000008 [INF] Request finished in 93.9097ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:46:23.2892526+03:00 0HLFTBRTPHRER:00000009 [INF] Request starting HTTP/1.1 DELETE http://localhost:5000/api/Categories?id=6   (ca22a1cb)
+2018-08-08T21:46:23.3133257+03:00 0HLFTBRTPHRER:00000009 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Delete (BookShop.Api)" with arguments (["6"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:46:23.3402897+03:00 0HLFTBRTPHRER:00000009 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:46:23.3763422+03:00 0HLFTBRTPHRER:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]
+        WHERE [c].[Id] = @__id_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-08-08T21:46:23.4149930+03:00 0HLFTBRTPHRER:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Name]
+FROM [Categories] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-08T21:46:23.4754067+03:00 0HLFTBRTPHRER:00000009 [INF] Executed DbCommand ("17"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Categories]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-08-08T21:46:23.4998294+03:00 0HLFTBRTPHRER:00000009 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:46:23.5206451+03:00 0HLFTBRTPHRER:00000009 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Delete (BookShop.Api)" in 213.8416ms (afa2e885)
+2018-08-08T21:46:23.5435643+03:00 0HLFTBRTPHRER:00000009 [INF] Request finished in 240.333ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:46:38.5336584+03:00 0HLFTBRTPHRER:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories   (ca22a1cb)
+2018-08-08T21:46:38.5462640+03:00 0HLFTBRTPHRER:0000000A [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:46:38.5571447+03:00 0HLFTBRTPHRER:0000000A [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:46:38.5950949+03:00 0HLFTBRTPHRER:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name]
+FROM [Categories] AS [dto]" (0723d8ff)
+2018-08-08T21:46:38.6101711+03:00 0HLFTBRTPHRER:0000000A [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:46:38.6231223+03:00 0HLFTBRTPHRER:0000000A [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 78.3322ms (afa2e885)
+2018-08-08T21:46:38.6373442+03:00 0HLFTBRTPHRER:0000000A [INF] Request finished in 103.9931ms 200 application/json; charset=utf-8 (791a596a)

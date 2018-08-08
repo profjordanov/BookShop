@@ -75,9 +75,14 @@ namespace BookShop.Business.Services
             }
             else
             {
-                return Option.None<CategoryServiceModel, Error>($"Category with ID: {model.Id} does not exist".ToError());
+                return Option.None<CategoryServiceModel, Error>($"Category with ID: {model.Id} does not exists.".ToError());
             }
         }
+
+        public async Task<Option<Success, Error>> DeleteById(int id)
+            => await Exists(id) ?
+                (await Delete(id)).Some<Success, Error>() :
+                    Option.None<Success, Error>($"Category with ID: {id} does not exists.".ToError());
 
         private async Task<bool> Exists(int id)
             => await _appDbContext
@@ -108,6 +113,14 @@ namespace BookShop.Business.Services
             category.Name = model.Name.Trim();
             await _appDbContext.SaveChangesAsync();
             return Mapper.Map<CategoryServiceModel>(category);
+        }
+
+        private async Task<Success> Delete(int id)
+        {
+            var category = await _appDbContext.Categories.FindAsync(id);
+            _appDbContext.Remove(category);
+            await _appDbContext.SaveChangesAsync();
+            return $"Category with ID: {id} was successfully deleted.".ToSuccess();
         }
     }
 }

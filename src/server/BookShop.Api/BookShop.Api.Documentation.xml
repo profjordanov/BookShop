@@ -39,6 +39,15 @@
             <response code="200">A category was updated successfully.</response>
             <response code="400">Already existing category name or invalid id.</response>
         </member>
+        <member name="M:BookShop.Api.Controllers.CategoriesController.Delete(System.Int32)">
+            <summary>
+            Deletes a category.
+            </summary>
+            <param name="id">The ID of the category.</param>
+            <returns>Success/Error message.</returns>
+            <response code="200">If successfully deleted.</response>
+            <response code="404">If there isn't such category.</response>
+        </member>
         <member name="M:BookShop.Api.Controllers.OptionController.Get(Optional.Option{System.String},Optional.Option{System.Int32},Optional.Option{System.Boolean})">
             <summary>
             Demonstrates the Option model binding with query string parameters. Cannot be tested from the Swagger UI.
