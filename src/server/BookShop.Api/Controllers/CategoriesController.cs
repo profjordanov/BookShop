@@ -21,6 +21,20 @@ namespace BookShop.Api.Controllers
         }
 
         /// <summary>
+        /// Adds a new category.
+        /// </summary>
+        /// <param name="model">The name of the category.</param>
+        /// <returns>A model of the new category.</returns>
+        /// <response code="201">A category was created successfully.</response>
+        /// <response code="400">Already existing category.</response>
+        [HttpPost]
+        [ProducesResponseType(typeof(CategoryServiceModel), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Post([FromBody] CategoryRequestModel model) =>
+            (await _categoryService.CreateByName(model.Name.Trim()))
+                .Match(c => CreatedAtAction(nameof(Post), c), Error);
+
+        /// <summary>
         /// Gets all categories.
         /// </summary>
         /// <returns>A collection of categories.</returns>
@@ -31,7 +45,7 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Get() =>
             (await _categoryService.All())
-                .Match(Ok, Error);
+            .Match(Ok, Error);
 
         /// <summary>
         /// Gets a category.
@@ -45,20 +59,20 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Get(int id) =>
             (await _categoryService.GetById(id))
-                .Match(Ok, Error);
+            .Match(Ok, Error);
 
         /// <summary>
-        /// Adds a new category 
+        /// Edits a category name.
         /// </summary>
-        /// <param name="model">The name of the category.</param>
+        /// <param name="model">Id and new name of the category.</param>
         /// <returns>A model of the new category.</returns>
-        /// <response code="201">A category was created successfully.</response>
-        /// <response code="400">Already existing category.</response>
-        [HttpPost]
-        [ProducesResponseType(typeof(CategoryServiceModel), (int)HttpStatusCode.Created)]
-        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> Post([FromBody] CategoryRequestModel model) =>
-            (await _categoryService.CreateByName(model.Name.Trim()))
-                .Match(c => CreatedAtAction(nameof(Post), c), Error);
+        /// <response code="200">A category was updated successfully.</response>
+        /// <response code="400">Already existing category name or invalid id.</response>
+        [HttpPut]
+        [ProducesResponseType(typeof(CategoryServiceModel), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int) HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Put([FromBody] CategoryServiceModel model) =>
+            (await _categoryService.UpdateByModel(model))
+            .Match(Ok, Error);
     }
 }

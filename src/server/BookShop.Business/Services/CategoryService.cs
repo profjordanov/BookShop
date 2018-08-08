@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using BookShop.Business.Extensions;
 using BookShop.Core;
 using BookShop.Core.Models.Categories;
 using BookShop.Core.Services;
@@ -29,11 +30,11 @@ namespace BookShop.Business.Services
                 .Categories
                 .ProjectTo<CategoryServiceModel>()
                 .ToListAsync())
-                .SomeNotNull();
+                .SomeNotNull(); //TODO: TEST OVER HERE
 
             return result.Match(
                 category => category.Some<IEnumerable<CategoryServiceModel>, Error>(),
-                () => Option.None<IEnumerable<CategoryServiceModel>, Error>(new Error("There are no categories!")));
+                () => Option.None<IEnumerable<CategoryServiceModel>, Error>("There are no categories!".ToError()));
         }
 
         public async Task<Option<CategoryServiceModel, Error>> GetById(int id)
@@ -49,6 +50,39 @@ namespace BookShop.Business.Services
                 category => category.Some<CategoryServiceModel, Error>(),
                 () => Option.None<CategoryServiceModel, Error>(new Error("There is no such category!")));
         }
+
+
+
+        public async Task<Option<CategoryServiceModel, Error>> CreateByName(string name)
+        {
+            return await Exists(name) ?
+                Option.None<CategoryServiceModel, Error>(new Error($"Category '{name}' already exists.")) :
+                (await Create(name)).Some<CategoryServiceModel, Error>();
+        }
+
+        public async Task<Option<CategoryServiceModel,Error>> UpdateByModel(CategoryServiceModel model)
+        {
+            if (await Exists(model.Id))
+            {
+                if (await Exists(model.Name))
+                {
+                    return Option.None<CategoryServiceModel, Error>($"Category '{model.Name}' already exists.".ToError());
+                }
+                else
+                {
+                    return (await Update(model)).Some<CategoryServiceModel, Error>();
+                }
+            }
+            else
+            {
+                return Option.None<CategoryServiceModel, Error>($"Category with ID: {model.Id} does not exist".ToError());
+            }
+        }
+
+        private async Task<bool> Exists(int id)
+            => await _appDbContext
+                .Categories
+                .AnyAsync(c => c.Id == id);
 
         private async Task<bool> Exists(string name)
             => await _appDbContext
@@ -68,11 +102,12 @@ namespace BookShop.Business.Services
             return Mapper.Map<CategoryServiceModel>(category);
         }
 
-        public async Task<Option<CategoryServiceModel, Error>> CreateByName(string name)
+        private async Task<CategoryServiceModel> Update(CategoryServiceModel model)
         {
-            return await Exists(name) ?
-                Option.None<CategoryServiceModel, Error>(new Error($"Category '{name}' already exists.")) :
-                (await Create(name)).Some<CategoryServiceModel, Error>();
+            var category = await _appDbContext.Categories.FindAsync(model.Id);
+            category.Name = model.Name.Trim();
+            await _appDbContext.SaveChangesAsync();
+            return Mapper.Map<CategoryServiceModel>(category);
         }
     }
 }

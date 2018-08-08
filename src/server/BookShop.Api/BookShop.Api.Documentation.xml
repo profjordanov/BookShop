@@ -4,6 +4,15 @@
         <name>BookShop.Api</name>
     </assembly>
     <members>
+        <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
+            <summary>
+            Adds a new category.
+            </summary>
+            <param name="model">The name of the category.</param>
+            <returns>A model of the new category.</returns>
+            <response code="201">A category was created successfully.</response>
+            <response code="400">Already existing category.</response>
+        </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Get">
             <summary>
             Gets all categories.
@@ -21,14 +30,14 @@
             <response code="200">If there is category.</response>
             <response code="404">If there isn't such category .</response>
         </member>
-        <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
+        <member name="M:BookShop.Api.Controllers.CategoriesController.Put(BookShop.Core.Models.Categories.CategoryServiceModel)">
             <summary>
-            Adds a new category 
+            Edits a category name.
             </summary>
-            <param name="model">The name of the category.</param>
+            <param name="model">Id and new name of the category.</param>
             <returns>A model of the new category.</returns>
-            <response code="201">A category was created successfully.</response>
-            <response code="400">Already existing category.</response>
+            <response code="200">A category was updated successfully.</response>
+            <response code="400">Already existing category name or invalid id.</response>
         </member>
         <member name="M:BookShop.Api.Controllers.OptionController.Get(Optional.Option{System.String},Optional.Option{System.Int32},Optional.Option{System.Boolean})">
             <summary>

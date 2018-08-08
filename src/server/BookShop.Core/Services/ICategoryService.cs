@@ -12,5 +12,7 @@ namespace BookShop.Core.Services
         Task<Option<CategoryServiceModel, Error>> GetById(int id);
 
         Task<Option<CategoryServiceModel, Error>> CreateByName(string name);
+
+        Task<Option<CategoryServiceModel, Error>> UpdateByModel(CategoryServiceModel model);
     }
 }

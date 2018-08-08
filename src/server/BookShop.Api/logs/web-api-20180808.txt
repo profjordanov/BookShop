@@ -1,0 +1,65 @@
+2018-08-08T21:00:11.7416320+03:00 0HLFTB34DCBVS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-08-08T21:00:11.9009314+03:00 0HLFTB34DCBVR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js   (ca22a1cb)
+2018-08-08T21:00:11.9080606+03:00 0HLFTB34DCBVS:00000001 [INF] Request finished in 164.2124ms 200 text/html (791a596a)
+2018-08-08T21:00:11.9490377+03:00 0HLFTB34DCBVU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js   (ca22a1cb)
+2018-08-08T21:00:12.0022876+03:00 0HLFTB34DCBVS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css   (ca22a1cb)
+2018-08-08T21:00:12.0676456+03:00 0HLFTB34DCBVS:00000002 [INF] The file "/swagger-ui.css" was not modified (f1f8d725)
+2018-08-08T21:00:12.0887477+03:00 0HLFTB34DCBVU:00000001 [INF] The file "/swagger-ui-bundle.js" was not modified (f1f8d725)
+2018-08-08T21:00:12.1325639+03:00 0HLFTB34DCBVR:00000001 [INF] The file "/swagger-ui-standalone-preset.js" was not modified (f1f8d725)
+2018-08-08T21:00:12.1581003+03:00 0HLFTB34DCBVR:00000001 [INF] Request finished in 271.1367ms 304 application/javascript (791a596a)
+2018-08-08T21:00:12.2662393+03:00 0HLFTB34DCBVU:00000001 [INF] Request finished in 226.6113ms 304 application/javascript (791a596a)
+2018-08-08T21:00:12.3263201+03:00 0HLFTB34DCBVS:00000002 [INF] Request finished in 139.9737ms 304 text/css (791a596a)
+2018-08-08T21:00:12.6514202+03:00 0HLFTB34DCBVR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2018-08-08T21:00:12.8461339+03:00 0HLFTB34DCBVU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon-32x32.png   (ca22a1cb)
+2018-08-08T21:00:12.8848595+03:00 0HLFTB34DCBVU:00000002 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2018-08-08T21:00:12.9425734+03:00 0HLFTB34DCBVU:00000002 [INF] Request finished in 177.4559ms 200 image/png (791a596a)
+2018-08-08T21:00:12.9614108+03:00 0HLFTB34DCBVU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon-16x16.png   (ca22a1cb)
+2018-08-08T21:00:13.0157344+03:00 0HLFTB34DCBVU:00000003 [INF] Sending file. Request path: '"/favicon-16x16.png"'. Physical path: '"N/A"' (27b0a520)
+2018-08-08T21:00:13.0951092+03:00 0HLFTB34DCBVU:00000003 [INF] Request finished in 83.7754ms 200 image/png (791a596a)
+2018-08-08T21:00:13.8615437+03:00 0HLFTB34DCBVR:00000002 [INF] Request finished in 1165.6256ms 200 application/json (791a596a)
+2018-08-08T21:00:27.4957164+03:00 0HLFTB34DCBVR:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories   (ca22a1cb)
+2018-08-08T21:00:27.7739582+03:00 0HLFTB34DCBVR:00000003 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:00:27.8074970+03:00 0HLFTB34DCBVR:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:00:28.5507588+03:00 0HLFTB34DCBVR:00000003 [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name]
+FROM [Categories] AS [dto]" (0723d8ff)
+2018-08-08T21:00:28.6215522+03:00 0HLFTB34DCBVR:00000003 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:00:28.6558085+03:00 0HLFTB34DCBVR:00000003 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 900.2135ms (afa2e885)
+2018-08-08T21:00:28.6651839+03:00 0HLFTB34DCBVR:00000003 [INF] Request finished in 1173.5467ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:00:46.2379406+03:00 0HLFTB34DCBVR:00000004 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/Categories application/json-patch+json 34 (ca22a1cb)
+2018-08-08T21:00:46.4427360+03:00 0HLFTB34DCBVR:00000004 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Put (BookShop.Api)" with arguments (["BookShop.Core.Models.Categories.CategoryServiceModel"]) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:00:46.4622269+03:00 0HLFTB34DCBVR:00000004 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:00:46.7401539+03:00 0HLFTB34DCBVR:00000004 [INF] Executed DbCommand ("61"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]
+        WHERE [c].[Id] = @__id_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-08-08T21:00:46.8771936+03:00 0HLFTB34DCBVR:00000004 [WRN] The LINQ expression '"where Equals([c].Name, __name_0, CurrentCultureIgnoreCase)"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-08T21:00:46.8915639+03:00 0HLFTB34DCBVR:00000004 [WRN] The LINQ expression '"Any()"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-08T21:00:46.9529621+03:00 0HLFTB34DCBVR:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Name]
+FROM [Categories] AS [c]" (0723d8ff)
+2018-08-08T21:00:47.0550662+03:00 0HLFTB34DCBVR:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Name]
+FROM [Categories] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-08T21:00:47.3788970+03:00 0HLFTB34DCBVR:00000004 [INF] Executed DbCommand ("8"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Categories] SET [Name] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-08-08T21:00:47.4638213+03:00 0HLFTB34DCBVR:00000004 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:00:47.4899441+03:00 0HLFTB34DCBVR:00000004 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Put (BookShop.Api)" in 1200.1811ms (afa2e885)
+2018-08-08T21:00:47.5069746+03:00 0HLFTB34DCBVR:00000004 [INF] Request finished in 1265.1257ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-08T21:01:16.3157991+03:00 0HLFTB34DCBVR:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Categories   (ca22a1cb)
+2018-08-08T21:01:16.3274070+03:00 0HLFTB34DCBVR:00000005 [INF] Executing action method "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-08T21:01:16.3397082+03:00 0HLFTB34DCBVR:00000005 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-08T21:01:16.3796160+03:00 0HLFTB34DCBVR:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name]
+FROM [Categories] AS [dto]" (0723d8ff)
+2018-08-08T21:01:16.3977007+03:00 0HLFTB34DCBVR:00000005 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-08-08T21:01:16.4231943+03:00 0HLFTB34DCBVR:00000005 [INF] Executed action "BookShop.Api.Controllers.CategoriesController.Get (BookShop.Api)" in 85.0558ms (afa2e885)
+2018-08-08T21:01:16.4381041+03:00 0HLFTB34DCBVR:00000005 [INF] Request finished in 120.6276ms 200 application/json; charset=utf-8 (791a596a)
