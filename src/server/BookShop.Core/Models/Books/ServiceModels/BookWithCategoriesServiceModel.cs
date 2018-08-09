@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookShop.Core.Models.Books
+namespace BookShop.Core.Models.Books.ServiceModels
 {
     public class BookWithCategoriesServiceModel
     {

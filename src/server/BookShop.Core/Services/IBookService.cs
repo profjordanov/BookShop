@@ -1,19 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookShop.Core.Models.Books;
+using BookShop.Core.Models.Books.ServiceModels;
+using Optional;
 
 namespace BookShop.Core.Services
 {
     public interface IBookService
     {
-        Task<int> Create(
-            string title,
-            string description,
-            decimal price,
-            int copies,
-            int? edition,
-            int? ageRestriction,
-            DateTime? releaseDate,
-            int authorId,
-            string categories);
+        Task<Option<BookDetailsServiceModel, Error>> GetById(int id);
+
+        Task<Option<IEnumerable<BookListingServiceModel>, Error>> GetBySearchTerm(string searchTerm);
+
+        Task<Option<BookDetailsServiceModel, Error>> CreateByModel(BookWithCategoriesRequestModel model);
     }
 }

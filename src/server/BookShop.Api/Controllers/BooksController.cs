@@ -1,8 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
 using BookShop.Api.Controllers._Base;
+using BookShop.Core;
 using BookShop.Core.Models.Books;
+using BookShop.Core.Models.Books.ServiceModels;
 using BookShop.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using static BookShop.Api.WebConstants;
 
 namespace BookShop.Api.Controllers
 {
@@ -21,28 +26,49 @@ namespace BookShop.Api.Controllers
             _authorService = authorService;
         }
 
+        /// <summary>
+        /// Gets data about a book by id.
+        /// Returns all data about the book + category names + author name and id.
+        /// </summary>
+        /// <param name="id">The ID of the book.</param>
+        /// <returns>A book model.</returns>
+        /// <response code="200">If there is book.</response>
+        /// <response code="404">If there isn't such book.</response>
+        [HttpGet(WithId)]
+        [ProducesResponseType(typeof(BookDetailsServiceModel), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int) HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Get(int id) =>
+            (await _bookService.GetById(id))
+                .Match(Ok, Error);
 
+        /// <summary>
+        /// Gets top 10 books which contain the given substring,
+        /// sorted by title (ascending). Returns only the title and id of the books.
+        /// </summary>
+        /// <param name="searchTerm">A word that can be found in the title of the books.</param>
+        /// <returns>Collection of book models.</returns>
+        /// <response code="200">If there is book which contains the given substring.</response>
+        /// <response code="404">If there isn't such book.</response>
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<BookListingServiceModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Get([FromQuery] string searchTerm = "") =>
+            (await _bookService.GetBySearchTerm(searchTerm))
+                .Match(Ok, Error);
+
+        /// <summary>
+        /// Adds a new book with title, description, price, copies, edition, age restriction,
+        /// release date and a string with space-separated category names.
+        /// </summary>
+        /// <param name="model">Book with categories.</param>
+        /// <returns>A model of the new book.</returns>
+        /// <response code="201">A book was created successfully.</response>
+        /// <response code="404">Author doesn't exists.</response>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] BookWithCategoriesRequestModel model)
-        {
-            var authorExists = await _authorService.Exists(model.AuthorId);
-            if (!authorExists)
-            {
-                return BadRequest("Author does not exist.");
-            }
-
-            var id = await _bookService.Create(
-                model.Title.Trim(),
-                model.Description.Trim(),
-                model.Price,
-                model.Copies,
-                model.Edition,
-                model.AgeRestriction,
-                model.ReleaseDate,
-                model.AuthorId,
-                model.Categories);
-
-            return Ok(id);
-        }
+        [ProducesResponseType(typeof(BookDetailsServiceModel), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Post([FromBody] BookWithCategoriesRequestModel model) =>
+            (await _bookService.CreateByModel(model))
+                .Match(b => CreatedAtAction(nameof(Post), b), Error);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -8,7 +7,7 @@ using BookShop.Business.Extensions;
 using BookShop.Core;
 using BookShop.Core.Models.Authors;
 using BookShop.Core.Models.Authors.ServiceModels;
-using BookShop.Core.Models.Books;
+using BookShop.Core.Models.Books.ServiceModels;
 using BookShop.Core.Services;
 using BookShop.Data.Entities;
 using BookShop.Data.EntityFramework;

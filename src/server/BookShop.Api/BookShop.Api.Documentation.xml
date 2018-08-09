@@ -30,6 +30,36 @@
             <response code="200">If there are books from author.</response>
             <response code="404">If there are no books from author.</response>
         </member>
+        <member name="M:BookShop.Api.Controllers.BooksController.Get(System.Int32)">
+            <summary>
+            Gets data about a book by id.
+            Returns all data about the book + category names + author name and id.
+            </summary>
+            <param name="id">The ID of the book.</param>
+            <returns>A book model.</returns>
+            <response code="200">If there is book.</response>
+            <response code="404">If there isn't such book.</response>
+        </member>
+        <member name="M:BookShop.Api.Controllers.BooksController.Get(System.String)">
+            <summary>
+            Gets top 10 books which contain the given substring,
+            sorted by title (ascending). Returns only the title and id of the books.
+            </summary>
+            <param name="searchTerm">A word that can be found in the title of the books.</param>
+            <returns>Collection of book models.</returns>
+            <response code="200">If there is book which contains the given substring.</response>
+            <response code="404">If there isn't such book.</response>
+        </member>
+        <member name="M:BookShop.Api.Controllers.BooksController.Post(BookShop.Core.Models.Books.BookWithCategoriesRequestModel)">
+            <summary>
+            Adds a new book with title, description, price, copies, edition, age restriction,
+            release date and a string with space-separated category names.
+            </summary>
+            <param name="model">Book with categories.</param>
+            <returns>A model of the new book.</returns>
+            <response code="201">A book was created successfully.</response>
+            <response code="404">Author doesn't exists.</response>
+        </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
             <summary>
             Adds a new category.
