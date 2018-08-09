@@ -27,10 +27,10 @@ namespace BookShop.Business.Services
         public async Task<Option<IEnumerable<CategoryServiceModel>, Error>> All()
         {
             var result = (await _appDbContext
-                .Categories
-                .ProjectTo<CategoryServiceModel>()
-                .ToListAsync())
-                .SomeNotNull(); //TODO: TEST OVER HERE
+                    .Categories
+                    .ProjectTo<CategoryServiceModel>()
+                    .ToListAsync())
+                .NoneWhen(c => !c.Any());
 
             return result.Match(
                 category => category.Some<IEnumerable<CategoryServiceModel>, Error>(),
@@ -51,13 +51,11 @@ namespace BookShop.Business.Services
                 () => Option.None<CategoryServiceModel, Error>(new Error("There is no such category!")));
         }
 
-
-
         public async Task<Option<CategoryServiceModel, Error>> CreateByName(string name)
         {
             return await Exists(name) ?
                 Option.None<CategoryServiceModel, Error>(new Error($"Category '{name}' already exists.")) :
-                (await Create(name)).Some<CategoryServiceModel, Error>();
+                    (await Create(name)).Some<CategoryServiceModel, Error>();
         }
 
         public async Task<Option<CategoryServiceModel,Error>> UpdateByModel(CategoryServiceModel model)
@@ -68,15 +66,11 @@ namespace BookShop.Business.Services
                 {
                     return Option.None<CategoryServiceModel, Error>($"Category '{model.Name}' already exists.".ToError());
                 }
-                else
-                {
-                    return (await Update(model)).Some<CategoryServiceModel, Error>();
-                }
+
+                return (await Update(model)).Some<CategoryServiceModel, Error>();
             }
-            else
-            {
-                return Option.None<CategoryServiceModel, Error>($"Category with ID: {model.Id} does not exists.".ToError());
-            }
+
+            return Option.None<CategoryServiceModel, Error>($"Category with ID: {model.Id} does not exists.".ToError());
         }
 
         public async Task<Option<Success, Error>> DeleteById(int id)

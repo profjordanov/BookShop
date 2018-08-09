@@ -46,7 +46,7 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Get() =>
             (await _categoryService.All())
-            .Match(Ok, Error);
+                .Match(Ok, Error);
 
         /// <summary>
         /// Gets a category.
@@ -60,7 +60,7 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Get(int id) =>
             (await _categoryService.GetById(id))
-            .Match(Ok, Error);
+                .Match(Ok, Error);
 
         /// <summary>
         /// Edits a category name.
@@ -74,7 +74,7 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int) HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Put([FromBody] CategoryServiceModel model) =>
             (await _categoryService.UpdateByModel(model))
-            .Match(Ok, Error);
+                .Match(Ok, Error);
 
         /// <summary>
         /// Deletes a category.
@@ -88,6 +88,6 @@ namespace BookShop.Api.Controllers
         [ProducesResponseType(typeof(Error), (int) HttpStatusCode.NotFound)]
         public async Task<IActionResult> Delete(int id) =>
             (await _categoryService.DeleteById(id))
-            .Match(Success, Error);
+                .Match(Success, Error);
     }
 }
