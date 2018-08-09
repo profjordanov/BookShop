@@ -33,7 +33,7 @@ namespace BookShop.Business.Services
                 .NoneWhen(c => !c.Any());
 
             return result.Match(
-                category => category.Some<IEnumerable<CategoryServiceModel>, Error>(),
+                categories => categories.Some<IEnumerable<CategoryServiceModel>, Error>(),
                 () => Option.None<IEnumerable<CategoryServiceModel>, Error>("There are no categories!".ToError()));
         }
 

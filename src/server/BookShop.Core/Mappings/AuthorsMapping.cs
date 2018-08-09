@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using AutoMapper;
-using BookShop.Core.Models.Authors;
+using BookShop.Core.Models.Authors.ServiceModels;
 using BookShop.Data.Entities;
 
 namespace BookShop.Core.Mappings

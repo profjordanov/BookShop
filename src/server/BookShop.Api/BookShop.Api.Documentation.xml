@@ -4,6 +4,32 @@
         <name>BookShop.Api</name>
     </assembly>
     <members>
+        <member name="M:BookShop.Api.Controllers.AuthorsController.Post(BookShop.Core.Models.Authors.AuthorRequestModel)">
+            <summary>
+            Creates a new author with first name and last name.
+            </summary>
+            <param name="model">The first and last name of the author (mandatory).</param>
+            <returns>A model of the new author.</returns>
+            <response code="200">An author was created successfully.</response>
+        </member>
+        <member name="M:BookShop.Api.Controllers.AuthorsController.Get(System.Int32)">
+            <summary>
+            Gets author with id, first name, last name and a list of all his/her book titles.
+            </summary>
+            <param name="id">The ID of the author.</param>
+            <returns>A author model.</returns>
+            <response code="200">If there is author.</response>
+            <response code="404">If there isn't such author .</response>
+        </member>
+        <member name="M:BookShop.Api.Controllers.AuthorsController.GetAuthorBooks(System.Int32)">
+            <summary>
+            Gets books from author by id. Returns all data about the book + category names.
+            </summary>
+            <param name="id">The ID of the author.</param>
+            <returns>Books with categories model.</returns>
+            <response code="200">If there are books from author.</response>
+            <response code="404">If there are no books from author.</response>
+        </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
             <summary>
             Adds a new category.

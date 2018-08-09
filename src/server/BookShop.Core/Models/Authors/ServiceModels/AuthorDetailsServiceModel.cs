@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BookShop.Core.Models.Authors
+namespace BookShop.Core.Models.Authors.ServiceModels
 {
     public class AuthorDetailsServiceModel
     {
