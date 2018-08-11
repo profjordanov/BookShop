@@ -27,6 +27,21 @@ namespace BookShop.Api.Controllers
         }
 
         /// <summary>
+        /// Adds a new book with title, description, price, copies, edition, age restriction,
+        /// release date and a string with space-separated category names.
+        /// </summary>
+        /// <param name="model">Book with categories.</param>
+        /// <returns>A model of the new book.</returns>
+        /// <response code="201">A book was created successfully.</response>
+        /// <response code="404">Author doesn't exists.</response>
+        [HttpPost]
+        [ProducesResponseType(typeof(BookDetailsServiceModel), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Post([FromBody] BookWithCategoriesRequestModel model) =>
+            (await _bookService.CreateByModel(model))
+            .Match(b => CreatedAtAction(nameof(Post), b), Error);
+
+        /// <summary>
         /// Gets data about a book by id.
         /// Returns all data about the book + category names + author name and id.
         /// </summary>
@@ -57,18 +72,20 @@ namespace BookShop.Api.Controllers
                 .Match(Ok, Error);
 
         /// <summary>
-        /// Adds a new book with title, description, price, copies, edition, age restriction,
-        /// release date and a string with space-separated category names.
+        /// Edits the book. Receives book title, description,
+        /// price, copies, edition, age restriction, release date and author id.
         /// </summary>
-        /// <param name="model">Book with categories.</param>
+        /// <param name="id">ID of the book</param>
+        /// <param name="model">Data for book title, description,
+        /// price, copies, edition, age restriction, release date and author id..</param>
         /// <returns>A model of the new book.</returns>
-        /// <response code="201">A book was created successfully.</response>
-        /// <response code="404">Author doesn't exists.</response>
-        [HttpPost]
-        [ProducesResponseType(typeof(BookDetailsServiceModel), (int)HttpStatusCode.Created)]
-        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> Post([FromBody] BookWithCategoriesRequestModel model) =>
-            (await _bookService.CreateByModel(model))
-                .Match(b => CreatedAtAction(nameof(Post), b), Error);
+        /// <response code="200">A book was updated successfully.</response>
+        /// <response code="400">Invalid book id or author id.</response>
+        [HttpPut(WithId)]
+        [ProducesResponseType(typeof(BookDetailsServiceModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Put(int id,[FromBody] BookRequestModel model) =>
+            (await _bookService.UpdateByModelAndId(id,model))
+                .Match(Ok, Error);
     }
 }

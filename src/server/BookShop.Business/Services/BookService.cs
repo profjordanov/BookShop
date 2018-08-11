@@ -66,6 +66,26 @@ namespace BookShop.Business.Services
                 (await Create(model)).Some<BookDetailsServiceModel, Error>() :
                     Option.None<BookDetailsServiceModel, Error>($"Author with {model.AuthorId} doesn't exists in our database!".ToError());
 
+        public async Task<Option<BookDetailsServiceModel, Error>> UpdateByModelAndId(int bookId, BookRequestModel model)
+        {
+            if (await Exists(bookId))
+            {
+                if (await _authorService.Exists(model.AuthorId))
+                {
+                    return (await Update(bookId, model)).Some<BookDetailsServiceModel, Error>();
+                }
+
+                return Option.None<BookDetailsServiceModel, Error>($"Author with ID:{model.AuthorId} does not exists!".ToError());
+            }
+
+            return Option.None<BookDetailsServiceModel, Error>($"Book with ID:{bookId} does not exists!".ToError());
+        }
+
+        private async Task<bool> Exists(int id)
+            => await _appContext
+                .Books
+                .AnyAsync(b => b.Id == id);
+
         private async Task<BookDetailsServiceModel> Create(BookWithCategoriesRequestModel model)
         {
             // Create book
@@ -122,5 +142,23 @@ namespace BookShop.Business.Services
 
             return Mapper.Map<BookDetailsServiceModel>(book);
         }
+
+        private async Task<BookDetailsServiceModel> Update(int bookId, BookRequestModel model)
+        {
+            var book = await _appContext.Books.FindAsync(bookId);
+
+            book.AuthorId = model.AuthorId;
+            book.Title = model.Title;
+            book.Description = model.Description;
+            book.Price = model.Price;
+            book.Copies = model.Copies;
+            book.Edition = model.Edition;
+            book.ReleaseDate = model.ReleaseDate;
+            book.AgeRestriction = model.AgeRestriction;
+
+            await _appContext.SaveChangesAsync();
+            return Mapper.Map<BookDetailsServiceModel>(book);
+        }
+
     }
 }

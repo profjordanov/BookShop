@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using AutoMapper;
+using BookShop.Core.Models.Books;
 using BookShop.Core.Models.Books.ServiceModels;
 using BookShop.Data.Entities;
 
@@ -20,6 +21,8 @@ namespace BookShop.Core.Mappings
                     .MapFrom(b => $"{b.Author.FirstName} {b.Author.LastName}"));
 
             CreateMap<Book, BookListingServiceModel>(MemberList.Destination);
+
+            CreateMap<BookRequestModel, Book>(MemberList.Destination);
         }
     }
 }

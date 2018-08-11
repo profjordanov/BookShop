@@ -14,5 +14,7 @@ namespace BookShop.Core.Services
         Task<Option<IEnumerable<BookListingServiceModel>, Error>> GetBySearchTerm(string searchTerm);
 
         Task<Option<BookDetailsServiceModel, Error>> CreateByModel(BookWithCategoriesRequestModel model);
+
+        Task<Option<BookDetailsServiceModel, Error>> UpdateByModelAndId(int id,BookRequestModel model);
     }
 }
