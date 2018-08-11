@@ -72,6 +72,15 @@
             <response code="200">A book was updated successfully.</response>
             <response code="400">Invalid book id or author id.</response>
         </member>
+        <member name="M:BookShop.Api.Controllers.BooksController.Delete(System.Int32)">
+            <summary>
+            Deletes the book.
+            </summary>
+            <param name="id">The ID of the book.</param>
+            <returns>Success/Error message.</returns>
+            <response code="200">If successfully deleted.</response>
+            <response code="404">If there isn't such book.</response>
+        </member>
         <member name="M:BookShop.Api.Controllers.CategoriesController.Post(BookShop.Core.Models.Categories.CategoryRequestModel)">
             <summary>
             Adds a new category.

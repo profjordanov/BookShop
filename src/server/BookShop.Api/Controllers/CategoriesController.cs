@@ -84,7 +84,7 @@ namespace BookShop.Api.Controllers
         /// <response code="200">If successfully deleted.</response>
         /// <response code="404">If there isn't such category.</response>
         [HttpDelete]
-        [ProducesResponseType(typeof(CategoryServiceModel), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Success), (int) HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Error), (int) HttpStatusCode.NotFound)]
         public async Task<IActionResult> Delete(int id) =>
             (await _categoryService.DeleteById(id))

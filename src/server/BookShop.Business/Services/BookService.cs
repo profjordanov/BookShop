@@ -81,6 +81,24 @@ namespace BookShop.Business.Services
             return Option.None<BookDetailsServiceModel, Error>($"Book with ID:{bookId} does not exists!".ToError());
         }
 
+        public async Task<Option<Success, Error>> DeleteById(int bookId)
+        {
+            if (await Exists(bookId))
+            {
+                return (await Delete(bookId)).Some<Success, Error>();
+            }
+
+            return Option.None<Success, Error>($"Book with ID:{bookId} does not exists!".ToError());
+        }
+
+        private async Task<Success> Delete(int id)
+        {
+            var book = await _appContext.Books.FindAsync(id);
+            _appContext.Remove(book);
+            await _appContext.SaveChangesAsync();
+            return $"Book with ID:{id} was removed successfully!".ToSuccess();
+        }
+
         private async Task<bool> Exists(int id)
             => await _appContext
                 .Books

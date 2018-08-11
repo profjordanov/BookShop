@@ -16,5 +16,7 @@ namespace BookShop.Core.Services
         Task<Option<BookDetailsServiceModel, Error>> CreateByModel(BookWithCategoriesRequestModel model);
 
         Task<Option<BookDetailsServiceModel, Error>> UpdateByModelAndId(int id,BookRequestModel model);
+
+        Task<Option<Success, Error>> DeleteById(int bookId);
     }
 }

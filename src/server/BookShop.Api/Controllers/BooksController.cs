@@ -5,6 +5,7 @@ using BookShop.Api.Controllers._Base;
 using BookShop.Core;
 using BookShop.Core.Models.Books;
 using BookShop.Core.Models.Books.ServiceModels;
+using BookShop.Core.Models.Categories;
 using BookShop.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using static BookShop.Api.WebConstants;
@@ -87,5 +88,19 @@ namespace BookShop.Api.Controllers
         public async Task<IActionResult> Put(int id,[FromBody] BookRequestModel model) =>
             (await _bookService.UpdateByModelAndId(id,model))
                 .Match(Ok, Error);
+
+        /// <summary>
+        /// Deletes the book.
+        /// </summary>
+        /// <param name="id">The ID of the book.</param>
+        /// <returns>Success/Error message.</returns>
+        /// <response code="200">If successfully deleted.</response>
+        /// <response code="404">If there isn't such book.</response>
+        [HttpDelete]
+        [ProducesResponseType(typeof(Success), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Delete(int id) =>
+            (await _bookService.DeleteById(id))
+                .Match(Success, Error);
     }
 }
