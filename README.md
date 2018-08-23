@@ -1,5 +1,11 @@
 # Book Shop Service
 
+## Endpoints
+
+- [x] GET - /api/authors/{id} - Gets author with id, first name, last name and a list of all his/her book titles.
+- [x] POST - /api/authors - Creates a new author with first name and last name (mandatory).
+- [x] GET - /api/authors/{id}/books	- Gets books from author by id. Returns all data about the book + category names.
+
 ## Features
 
 - [x] AutoMapper
