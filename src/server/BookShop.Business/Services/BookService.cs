@@ -165,7 +165,7 @@ namespace BookShop.Business.Services
         {
             var book = await _appContext.Books.FindAsync(bookId);
 
-            book.AuthorId = model.AuthorId; // TODO: use automapper
+            book.AuthorId = model.AuthorId; // TODO: use automapper in here
             book.Title = model.Title;
             book.Description = model.Description;
             book.Price = model.Price;
