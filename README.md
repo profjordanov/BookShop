@@ -39,5 +39,3 @@
 - [x] Moq
 - [x] Shouldly
 - [x] Arrange Act Assert Pattern
-
--> Powerd by Dev Adventures .NET Core project template. (https://devadventures.net/2018/06/09/introducing-dev-adventures-net-core-project-template/)
